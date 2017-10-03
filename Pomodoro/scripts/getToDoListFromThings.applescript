@@ -1,5 +1,5 @@
-tell application "System Events" to if exists process "Things" then
-tell application "Things"
+tell application "System Events" to if exists process "Things3" then
+tell application "Things3"
 set todoList to {}
 repeat with aToDo in (to dos of list "Today" whose status is equal to (open))
     set aProject to project of aToDo

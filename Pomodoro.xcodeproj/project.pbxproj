@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2654AE941F83D49D00889481 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654AE8E1F83D49D00889481 /* libxml2.tbd */; };
 		6978DAF6134406F8004B9ABB /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4733133B72BC00311E34 /* BGHUDAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		6978DAF7134406FD004B9ABB /* OAuthConsumer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4734133B72BC00311E34 /* OAuthConsumer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		6978DAF813440701004B9ABB /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4735133B72BC00311E34 /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -79,7 +80,6 @@
 		698F46EA133B601500311E34 /* PTHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F46E4133B601500311E34 /* PTHotKeyCenter.m */; };
 		698F46EB133B601500311E34 /* PTKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F46E6133B601500311E34 /* PTKeyCodeTranslator.m */; };
 		698F46EC133B601500311E34 /* PTKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F46E8133B601500311E34 /* PTKeyCombo.m */; };
-		698F46F9133B708700311E34 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F46F8133B708700311E34 /* libxml2.dylib */; };
 		698F46FB133B709600311E34 /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F46FA133B709600311E34 /* CalendarStore.framework */; };
 		698F4736133B72BD00311E34 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F4733133B72BC00311E34 /* BGHUDAppKit.framework */; };
 		698F4737133B72BD00311E34 /* OAuthConsumer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F4734133B72BC00311E34 /* OAuthConsumer.framework */; };
@@ -237,6 +237,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2654AE8E1F83D49D00889481 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		2CCECF681396319200A8608F /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "it-IT"; path = "it-IT.lproj/About.xib"; sourceTree = "<group>"; };
 		2CCECF69139631A100A8608F /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "it-IT"; path = "it-IT.lproj/Splash.xib"; sourceTree = "<group>"; };
 		2CCECF6A139631AF00A8608F /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "it-IT"; path = "it-IT.lproj/Stats.xib"; sourceTree = "<group>"; };
@@ -455,6 +456,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2654AE941F83D49D00889481 /* libxml2.tbd in Frameworks */,
 				698F4736133B72BD00311E34 /* BGHUDAppKit.framework in Frameworks */,
 				698F4737133B72BD00311E34 /* OAuthConsumer.framework in Frameworks */,
 				698F4738133B72BD00311E34 /* ShortcutRecorder.framework in Frameworks */,
@@ -463,7 +465,6 @@
 				698F4748133B7A9100311E34 /* Growl.framework in Frameworks */,
 				698F473C133B731600311E34 /* Carbon.framework in Frameworks */,
 				698F46FB133B709600311E34 /* CalendarStore.framework in Frameworks */,
-				698F46F9133B708700311E34 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,6 +767,7 @@
 		69AE95E6133B4705004DC14D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2654AE8E1F83D49D00889481 /* libxml2.tbd */,
 				698F473D133B735400311E34 /* Apple */,
 				69AE95E9133B4705004DC14D /* Other Frameworks */,
 			);
@@ -1378,7 +1380,7 @@
 		69AE9619133B4706004DC14D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1391,7 +1393,10 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pomodoro/Pomodoro-Prefix.pch";
-				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
+				HEADER_SEARCH_PATHS = (
+					"/usr/include/libxml2/**",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "Pomodoro/Pomodoro-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1401,7 +1406,7 @@
 		69AE961A133B4706004DC14D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1414,7 +1419,10 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pomodoro/Pomodoro-Prefix.pch";
-				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
+				HEADER_SEARCH_PATHS = (
+					"/usr/include/libxml2/**",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "Pomodoro/Pomodoro-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
