@@ -185,6 +185,10 @@
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"adiumEnabled"];
     [defaultValues setObject:NSLocalizedString(@"Pomodoro '$pomodoroName'. Back at $dueTime", @"Mood Message") forKey:@"moodMessageInPomodoro"];
     [defaultValues setObject:NSLocalizedString(@"Resting after Pomodoro '$pomodoroName'", @"Mood Message Break") forKey:@"moodMessageInPomodoroBreak"];
+    
+    [defaultValues setObject:@"Project Name" forKey:@"projectName"];
+    [defaultValues setObject: [NSNumber numberWithInt:0] forKey:@"ffvpPage"];
+    [defaultValues setObject: [NSDate date] forKey:@"entryDate"];
 
 
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];		

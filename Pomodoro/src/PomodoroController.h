@@ -60,6 +60,8 @@
 	IBOutlet NSMenuItem* __unsafe_unretained resumePomodoro;
 	IBOutlet GrowlNotifier* __unsafe_unretained growl;
 	IBOutlet Pomodoro* __unsafe_unretained pomodoro;
+    IBOutlet NSTextField* __unsafe_unretained ffvpPage;
+    IBOutlet NSDatePicker* __unsafe_unretained entryDate;
     NSInteger longBreakCounter;
     NSTimer* longBreakCheckerTimer;
     PomodoroNotifier* pomodoroNotifier;
@@ -109,6 +111,8 @@
 @property (nonatomic, unsafe_unretained, readonly) IBOutlet NSMenuItem* internalInterruptPomodoro;
 @property (nonatomic, unsafe_unretained, readonly) IBOutlet NSMenuItem* invalidatePomodoro;
 @property (nonatomic, unsafe_unretained, readonly) IBOutlet NSMenuItem* resumePomodoro;
+@property (nonatomic, unsafe_unretained, readwrite) IBOutlet NSTextField* ffvpPage;
+@property (nonatomic, unsafe_unretained, readwrite) IBOutlet NSDatePicker* entryDate;
 
 -(void) keyMute;
 -(void) keyStart;

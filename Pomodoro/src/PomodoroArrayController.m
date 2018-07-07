@@ -24,7 +24,7 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "PomodoroArrayController.h"
-
+#import "CommonController.h"
 
 @implementation PomodoroArrayController
 
@@ -37,7 +37,12 @@
 
 	[newPomodoro setValue:[NSNumber numberWithLong:duration] forKey:@"durationMinutes"]; 
 	[newPomodoro setValue:[NSNumber numberWithLong:externalInterruptions] forKey:@"externalInterruptions"]; 
-    [newPomodoro setValue:[NSNumber numberWithLong:internalInterruptions] forKey:@"internalInterruptions"]; 
+    [newPomodoro setValue:[NSNumber numberWithLong:internalInterruptions] forKey:@"internalInterruptions"];
+    
+    [newPomodoro setValue:_projectName forKey:@"project"];
+    NSString *ffvpPage = _ffvpPage;
+    [newPomodoro setValue:[NSNumber numberWithInt:[ffvpPage intValue]] forKey:@"ffvpPage"];
+    [newPomodoro setValue:_entryDate forKey:@"entryDate"];
 	
     return newPomodoro;
 

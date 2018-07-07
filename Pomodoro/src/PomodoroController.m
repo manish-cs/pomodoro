@@ -262,7 +262,8 @@
     if (![namePanel makeFirstResponder:namePanel]) {
         [namePanel endEditingFor:nil];
     }
-    
+    [[NSUserDefaults standardUserDefaults] setObject:self.ffvpPage.stringValue forKey:@"ffvpPage"];
+    [[NSUserDefaults standardUserDefaults] setObject:self.entryDate.dateValue forKey:@"entryDate"];
     [[NSNotificationCenter defaultCenter] postNotificationName:_PMPomoNameGiven object:namePanel];
 
 	[namePanel close];
@@ -276,7 +277,7 @@
 - (IBAction) start: (id) sender {
 	
 	if (_initialTime > 0) {
-        
+        self.entryDate.dateValue = [NSDate date];
 		[about close];
 		[splash close];
         [scriptPanel close];

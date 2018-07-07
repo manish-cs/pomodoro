@@ -189,9 +189,20 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
     
     NSString* header = [NSString stringWithFormat:NSLocalizedString(@"Export data created by Pomodoro on %@\n",@"Export Header"), [NSDate date]];
     [output writeData:[header dataUsingEncoding:NSUTF8StringEncoding]];
-    [output writeData:[NSLocalizedString(@"\nDescription, When, Duration, externalInterruptions, internalInterruptions\n\n",@"Export Table Header") dataUsingEncoding:NSUTF8StringEncoding]];
+    [output writeData:[NSLocalizedString(@"\nDescription, When, Duration, externalInterruptions, internalInterruptions,  FFVP Page,   Entry date,   Project\n",@"Export Table Header") dataUsingEncoding:NSUTF8StringEncoding]];
     for (NSManagedObject* pomo in results) {
-        NSString* line = [NSString stringWithFormat:@"%@, %@, %@, %@, %@\n", [pomo valueForKey:@"name"], [pomo valueForKey:@"when"], [pomo valueForKey:@"durationMinutes"], [pomo valueForKey:@"externalInterruptions"], [pomo valueForKey:@"internalInterruptions"]];
+        NSString *project = @"No name";
+        if([pomo valueForKey:@"project"] != nil){
+            project = [pomo valueForKey:@"project"];
+        }
+        NSString *entryDate = @"No date";
+        if([pomo valueForKey:@"entryDate"] !=nil){
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"dd/mm/yy"];
+            entryDate = [dateFormatter stringFromDate:[pomo valueForKey:@"entryDate"]];
+        }
+
+        NSString* line = [NSString stringWithFormat:@"%@, %@, %@, %@, %@, %@, %@, %@\n", [pomo valueForKey:@"name"], [pomo valueForKey:@"when"], [pomo valueForKey:@"durationMinutes"], [pomo valueForKey:@"externalInterruptions"], [pomo valueForKey:@"internalInterruptions"],[pomo valueForKey:@"ffvpPage"],entryDate,project];
         [output writeData:[line dataUsingEncoding:NSUTF8StringEncoding]];							  
     }
 

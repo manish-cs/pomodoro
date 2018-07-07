@@ -38,6 +38,7 @@
     
     PomodoroController* pomoController = (PomodoroController*)[[NSApplication sharedApplication] delegate];
     Pomodoro* pomo = pomoController.pomodoro;
+    pomoController.entryDate.dateValue = [NSDate date];
     
     if (![pomoController.startPomodoro isEnabled]) {
         return @"Can't start";

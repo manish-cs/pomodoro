@@ -58,6 +58,10 @@
 #define _globalPomodoroDone [[[NSUserDefaults standardUserDefaults] objectForKey:@"globalPomodoroDone"] intValue]
 #define _globalPomodoroReset [[[NSUserDefaults standardUserDefaults] objectForKey:@"globalPomodoroReset"] intValue]
 
+#define _projectName [[NSUserDefaults standardUserDefaults] objectForKey:@"projectName"]
+#define _ffvpPage [[NSUserDefaults standardUserDefaults] objectForKey:@"ffvpPage"]
+#define _entryDate [[NSUserDefaults standardUserDefaults] objectForKey:@"entryDate"]
+
 @interface CommonController : NSObject {
     
 }
