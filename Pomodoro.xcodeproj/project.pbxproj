@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1367854720F8FCE800F48FC2 /* Pomodoros.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1367854320F8FCE800F48FC2 /* Pomodoros.xcdatamodeld */; };
 		2654AE941F83D49D00889481 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654AE8E1F83D49D00889481 /* libxml2.tbd */; };
 		6978DAF6134406F8004B9ABB /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4733133B72BC00311E34 /* BGHUDAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		6978DAF7134406FD004B9ABB /* OAuthConsumer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 698F4734133B72BC00311E34 /* OAuthConsumer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -32,7 +33,6 @@
 		698F4632133B5AF900311E34 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45CA133B5AF900311E34 /* stop.png */; };
 		698F4633133B5AF900311E34 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45CB133B5AF900311E34 /* twitter.png */; };
 		698F4634133B5AF900311E34 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45CC133B5AF900311E34 /* yellow.png */; };
-		698F4635133B5AF900311E34 /* Pomodoros.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 698F45CD133B5AF900311E34 /* Pomodoros.xcdatamodeld */; };
 		698F4642133B5AF900311E34 /* ring.wav in Resources */ = {isa = PBXBuildFile; fileRef = 698F45DE133B5AF900311E34 /* ring.wav */; };
 		698F4643133B5AF900311E34 /* tick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 698F45DF133B5AF900311E34 /* tick.wav */; };
 		698F4644133B5AF900311E34 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F45E2133B5AF900311E34 /* AboutController.m */; };
@@ -237,6 +237,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1367854420F8FCE800F48FC2 /* Pomodoros.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros.xcdatamodel; sourceTree = "<group>"; };
+		1367854520F8FCE800F48FC2 /* Pomodoros 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pomodoros 2.xcdatamodel"; sourceTree = "<group>"; };
+		1367854620F8FCE800F48FC2 /* Pomodoros_1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros_1.xcdatamodel; sourceTree = "<group>"; };
 		2654AE8E1F83D49D00889481 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		2CCECF681396319200A8608F /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "it-IT"; path = "it-IT.lproj/About.xib"; sourceTree = "<group>"; };
 		2CCECF69139631A100A8608F /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "it-IT"; path = "it-IT.lproj/Splash.xib"; sourceTree = "<group>"; };
@@ -267,8 +270,6 @@
 		698F45CA133B5AF900311E34 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		698F45CB133B5AF900311E34 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		698F45CC133B5AF900311E34 /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
-		698F45CE133B5AF900311E34 /* Pomodoros.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros.xcdatamodel; sourceTree = "<group>"; };
-		698F45CF133B5AF900311E34 /* Pomodoros_1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoros_1.xcdatamodel; sourceTree = "<group>"; };
 		698F45D1133B5AF900311E34 /* addTodoToOmniFocus.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = addTodoToOmniFocus.applescript; sourceTree = "<group>"; };
 		698F45D2133B5AF900311E34 /* addTodoToThings.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = addTodoToThings.applescript; sourceTree = "<group>"; };
 		698F45D3133B5AF900311E34 /* getToDoListFromOmniFocus.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = getToDoListFromOmniFocus.applescript; sourceTree = "<group>"; };
@@ -547,7 +548,7 @@
 		698F468F133B5D3D00311E34 /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
-				698F45CD133B5AF900311E34 /* Pomodoros.xcdatamodeld */,
+				1367854320F8FCE800F48FC2 /* Pomodoros.xcdatamodeld */,
 				698F45F7133B5AF900311E34 /* Pomodoro.h */,
 				698F45F8133B5AF900311E34 /* Pomodoro.m */,
 				698F45FF133B5AF900311E34 /* PomodoroNotifier.h */,
@@ -1131,7 +1132,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				69AE95F5133B4705004DC14D /* main.m in Sources */,
-				698F4635133B5AF900311E34 /* Pomodoros.xcdatamodeld in Sources */,
 				698F4644133B5AF900311E34 /* AboutController.m in Sources */,
 				698F4645133B5AF900311E34 /* ApplescriptController.m in Sources */,
 				698F4646133B5AF900311E34 /* Binder.m in Sources */,
@@ -1162,6 +1162,7 @@
 				698F46CF133B5F9500311E34 /* MGTwitterMiscLibXMLParser.m in Sources */,
 				698F46D0133B5F9500311E34 /* MGTwitterMiscParser.m in Sources */,
 				698F46D3133B5F9500311E34 /* MGTwitterSocialGraphLibXMLParser.m in Sources */,
+				1367854720F8FCE800F48FC2 /* Pomodoros.xcdatamodeld in Sources */,
 				698F46D4133B5F9500311E34 /* MGTwitterSocialGraphParser.m in Sources */,
 				698F46D5133B5F9500311E34 /* MGTwitterStatusesLibXMLParser.m in Sources */,
 				698F46D6133B5F9500311E34 /* MGTwitterStatusesParser.m in Sources */,
@@ -1508,13 +1509,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		698F45CD133B5AF900311E34 /* Pomodoros.xcdatamodeld */ = {
+		1367854320F8FCE800F48FC2 /* Pomodoros.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				698F45CE133B5AF900311E34 /* Pomodoros.xcdatamodel */,
-				698F45CF133B5AF900311E34 /* Pomodoros_1.xcdatamodel */,
+				1367854420F8FCE800F48FC2 /* Pomodoros.xcdatamodel */,
+				1367854520F8FCE800F48FC2 /* Pomodoros 2.xcdatamodel */,
+				1367854620F8FCE800F48FC2 /* Pomodoros_1.xcdatamodel */,
 			);
-			currentVersion = 698F45CE133B5AF900311E34 /* Pomodoros.xcdatamodel */;
+			currentVersion = 1367854520F8FCE800F48FC2 /* Pomodoros 2.xcdatamodel */;
 			path = Pomodoros.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
