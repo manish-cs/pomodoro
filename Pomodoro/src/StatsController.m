@@ -198,7 +198,7 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
         NSString *entryDate = @"No date";
         if([pomo valueForKey:@"entryDate"] !=nil){
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"dd/mm/yy"];
+            [dateFormatter setDateFormat:@"dd/MM/yy"];
             entryDate = [dateFormatter stringFromDate:[pomo valueForKey:@"entryDate"]];
         }
 
