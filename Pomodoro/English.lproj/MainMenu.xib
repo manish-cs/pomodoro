@@ -54,6 +54,7 @@
                 <outlet property="breakCombo" destination="172" id="517"/>
                 <outlet property="entryDate" destination="QvI-Lj-gbt" id="mbV-qm-k4r"/>
                 <outlet property="ffvpPage" destination="S2i-lk-XfG" id="KG3-4m-7xR"/>
+                <outlet property="ffvpProject" destination="rLl-Qd-iiz" id="Hxd-Sa-VGD"/>
                 <outlet property="finishPomodoro" destination="13" id="62"/>
                 <outlet property="growl" destination="1208" id="1210"/>
                 <outlet property="initialTimeCombo" destination="164" id="1380"/>

@@ -282,7 +282,7 @@
 		[splash close];
         [scriptPanel close];
  		[prefs close];
-        
+        [ffvpProject addItemsWithObjectValues:[self fetchUniqueStrings]];
         if ([longBreakCheckerTimer isValid]) {
             [longBreakCheckerTimer invalidate];
             longBreakCheckerTimer = nil;
@@ -542,6 +542,7 @@
 	[initialTimeComboInStart addItemWithObjectValue: [NSNumber numberWithInt:30]];
 	[initialTimeComboInStart addItemWithObjectValue: [NSNumber numberWithInt:35]];
     
+    
 	[interruptCombo addItemWithObjectValue: [NSNumber numberWithInt:15]];
 	[interruptCombo addItemWithObjectValue: [NSNumber numberWithInt:20]];
 	[interruptCombo addItemWithObjectValue: [NSNumber numberWithInt:25]];
@@ -577,7 +578,7 @@
     
 	stats = [[StatsController alloc] init];
 	[stats window];
-
+    [ffvpProject addItemsWithObjectValues:[self fetchUniqueStrings]];
 	GetCurrentProcess(&psn);
     
 	[self observeUserDefault:@"ringVolume"];
@@ -591,6 +592,29 @@
 		[self help:nil];
 	}	
 		
+}
+
+-(NSMutableArray*)fetchUniqueStrings{
+    [ffvpProject removeAllItems];
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Pomodoros"];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Pomodoros" inManagedObjectContext:stats.managedObjectContext];
+    
+    fetchRequest.resultType = NSDictionaryResultType;
+    fetchRequest.propertiesToFetch = [NSArray arrayWithObject:[[entity propertiesByName] objectForKey:@"project"]];
+    fetchRequest.returnsDistinctResults = YES;
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"when" ascending:NO]];
+    // Now it should yield an NSArray of distinct values in dictionaries.
+    NSArray *dictionaries = [stats.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    NSMutableArray *uniqueProjectNames = [[NSMutableArray alloc] init];
+    for (NSDictionary *dict in dictionaries) {
+        if([[dict allKeys] containsObject:@"project"]){
+            NSString *proj = [dict objectForKey:@"project"];
+            if(proj.length > 0){
+                [uniqueProjectNames addObject:proj];
+            }
+        }
+    }
+    return uniqueProjectNames;
 }
 
 
